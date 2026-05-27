@@ -1,0 +1,27 @@
+ecommerce-pern/
+├── server/
+│   ├── server.js
+│   ├── db.js
+│   └── package.json
+├── client/
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── App.css
+│   │   ├── context/
+│   │   │   ├── AuthContext.js
+│   │   │   └── CartContext.js
+│   │   ├── pages/
+│   │   │   ├── Admin/
+│   │   │   │   ├── AdminLogin.js
+│   │   │   │   ├── AdminLogin.css
+│   │   │   │   ├── AdminDashboard.js
+│   │   │   │   └── AdminDashboard.css
+│   │   │   ├── Checkout.js
+│   │   │   ├── Checkout.css
+│   │   │   ├── OrderConfirmation.js
+│   │   │   ├── OrderConfirmation.css
+│   │   │   ├── Orders.js
+│   │   │   └── Orders.css
+│   │   └── components/
+│   │       └── ProtectedRoute.js
+└── database.sql

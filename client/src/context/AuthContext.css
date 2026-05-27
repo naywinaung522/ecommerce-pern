@@ -1,0 +1,176 @@
+/* Auth Context Styles - for any auth-related UI components */
+
+.auth-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.auth-loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.auth-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  max-width: 400px;
+  width: 90%;
+  animation: slideIn 0.3s ease;
+}
+
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.auth-session-timer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #ffc107;
+  z-index: 999;
+  animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.auth-session-timer.warning {
+  border-left-color: #dc3545;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.15);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(220, 53, 69, 0.3);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.15);
+  }
+}
+
+.auth-session-timer p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.auth-session-timer .timer {
+  font-weight: bold;
+  color: #dc3545;
+  font-size: 16px;
+}
+
+.auth-session-timer .extend-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.3s;
+}
+
+.auth-session-timer .extend-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .auth-loading {
+    background-color: rgba(33, 33, 33, 0.9);
+  }
+  
+  .auth-modal {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+  }
+  
+  .auth-session-timer {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border-left-color: #ffc107;
+  }
+  
+  .auth-session-timer.warning {
+    border-left-color: #dc3545;
+  }
+  
+  .auth-session-timer p {
+    color: #e0e0e0;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .auth-session-timer {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+  
+  .auth-modal {
+    width: 95%;
+    padding: 20px;
+  }
+}

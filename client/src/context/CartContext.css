@@ -1,0 +1,361 @@
+/* Cart Context Styles - for cart-related UI components */
+
+.cart-notification {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  min-width: 300px;
+  max-width: 400px;
+  z-index: 1000;
+  animation: slideInNotification 0.3s ease;
+  border-left: 4px solid #28a745;
+}
+
+@keyframes slideInNotification {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.cart-notification-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart-notification-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.cart-notification-icon.error {
+  background-color: #dc3545;
+}
+
+.cart-notification-text {
+  flex: 1;
+}
+
+.cart-notification-text h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.cart-notification-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.cart-notification-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #999;
+  cursor: pointer;
+  padding: 0 5px;
+  transition: color 0.3s;
+}
+
+.cart-notification-close:hover {
+  color: #333;
+}
+
+.cart-mini-preview {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  animation: dropdownFade 0.3s ease;
+  margin-top: 10px;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cart-mini-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-mini-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.cart-mini-header span {
+  color: #666;
+  font-size: 14px;
+}
+
+.cart-mini-items {
+  padding: 10px 15px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.cart-mini-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-mini-item:last-child {
+  border-bottom: none;
+}
+
+.cart-mini-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cart-mini-item-info {
+  flex: 1;
+}
+
+.cart-mini-item-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.cart-mini-item-info p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.cart-mini-item-price {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 14px;
+}
+
+.cart-mini-footer {
+  padding: 15px;
+  border-top: 1px solid #eee;
+  background-color: #f8f9fa;
+}
+
+.cart-mini-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.cart-mini-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cart-mini-actions .btn {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.cart-empty-mini {
+  padding: 30px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.cart-floating-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s;
+  z-index: 99;
+  border: none;
+  position: relative;
+}
+
+.cart-floating-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.cart-floating-button .cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.cart-progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.cart-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #28a745, #20c997);
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.cart-free-shipping-message {
+  font-size: 13px;
+  color: #28a745;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cart-free-shipping-message i {
+  font-size: 16px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .cart-notification,
+  .cart-mini-preview {
+    background-color: #2d2d2d;
+    border-left-color: #28a745;
+  }
+  
+  .cart-notification-text h4,
+  .cart-mini-header h3,
+  .cart-mini-item-info h4 {
+    color: #e0e0e0;
+  }
+  
+  .cart-notification-text p,
+  .cart-mini-header span,
+  .cart-mini-item-info p {
+    color: #b0b0b0;
+  }
+  
+  .cart-mini-header,
+  .cart-mini-item {
+    border-color: #404040;
+  }
+  
+  .cart-mini-footer {
+    background-color: #363636;
+    border-color: #404040;
+  }
+  
+  .cart-mini-total {
+    color: #e0e0e0;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cart-notification {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    max-width: none;
+    min-width: auto;
+  }
+  
+  .cart-mini-preview {
+    width: 100%;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 80vh;
+    border-radius: 12px 12px 0 0;
+    animation: slideUp 0.3s ease;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .cart-floating-button {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .cart-notification,
+  .cart-mini-preview,
+  .cart-floating-button {
+    display: none !important;
+  }
+}

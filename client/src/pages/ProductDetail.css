@@ -1,0 +1,35 @@
+/* Add to existing ProductDetail.css */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.action-buttons .btn {
+  flex: 1;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.add-to-cart-btn {
+  background-color: #007bff;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #0056b3;
+}
+
+.buy-now-btn {
+  background-color: #28a745;
+}
+
+.buy-now-btn:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+  }
+}
